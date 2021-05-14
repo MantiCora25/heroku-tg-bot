@@ -8139,7 +8139,7 @@ caption : 'Zimbabwe on a world map',
                                                                                                            
    });                   
 }
-else {
+else if ((msg.text !== (`/start`)) || (msg.text !== (`/help`)) || (msg.text !== (`/report`)) || (msg.text !== (`/capitals`)) || (msg.text !== (`/countries`)) || (msg.text !== (`/copyright`))){
     bot.sendMessage(msg.chat.id, `Unfortunately, I did not find any match. Try to use /capitals or /countries to see all;)`)
 }
     })
