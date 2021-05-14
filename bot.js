@@ -8139,6 +8139,9 @@ caption : 'Zimbabwe on a world map',
                                                                                                            
    });                   
 }
+else {
+    bot.sendMessage(msg.chat.id, `Unfortunately, I did not find any match. Try to use /capitals or /countries to see all;)`)
+}
     })
 };
 
