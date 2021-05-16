@@ -1,3 +1,5 @@
+//бота можно найти в Telegram: @infocountry_bot
+
 const TelegramBot = require('node-telegram-bot-api');
 const countries = require('./countries.js');
 const capitals = require('./capitals.js');
