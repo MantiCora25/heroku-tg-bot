@@ -20,10 +20,10 @@ const bot = new TelegramBot(TOKEN, {                        // создание 
 /*________________________________________________________________________________________________*/
 
 
-
+/*
 bot.onText(/\/start/, msg => {                              // бот здоровается с пользователем при команде /start
     const {id} = msg.chat;
-    bot.sendMessage(id, `Hi, ${msg.from.first_name}. Type country or capital city;)`);   
+    bot.sendMessage(id, `Nice to see you. Type country or capital city;)`);   
 });
 
 bot.onText(/\/help/, msg => {                              // бот отправляет информацию /help
@@ -49,7 +49,7 @@ bot.onText(/\/capitals/, msg => {                              // бот отп�
     bot.sendMessage(id, capitals, {
         parse_mode : 'HTML',
     });   
-});
+});*/
 
 
 
@@ -8139,11 +8139,33 @@ caption : 'Zimbabwe on a world map',
                                                                                                            
    });                   
 }
-else if ((msg.text !== (`/start`)) || (msg.text !== (`/help`)) || (msg.text !== (`/report`)) || (msg.text !== (`/capitals`)) || (msg.text !== (`/countries`)) || (msg.text !== (`/copyright`))){
-    bot.sendMessage(msg.chat.id, `Unfortunately, I did not find any match. Try to use /capitals or /countries to see all;)`)
+else if ((msg.text === (`/start`))){
+   bot.sendMessage(msg.chat.id, `Hi, ${msg.from.first_name}, nice to see you. Type country or capital city;)`)
 }
+else if ((msg.text === (`/help`)) ){
+    bot.sendMessage(msg.chat.id, `This bot can send you some info about any country(capital, population, area, currency, etc.). Bot can find country by its name or capital city. You can start now;)`)
+}
+else if ((msg.text === (`/report`)) ){
+    bot.sendMessage(msg.chat.id, `You can contact developer by email: lliahovich2014@gmail.com IMPORTANT!!! If you are contacting about bugs or mistakes, please write "InfoCountryBot - BUG" in a letter subject. If you are contacting about any other case, please write "InfoCountryBot - OTHER" in a letter subject. Thank you in advance.`)
+}
+else if ((msg.text === (`/copyright`)) ){
+    bot.sendMessage(msg.chat.id, `InfoCountryBot is an uncommercial product. All the information was taken from the open sources on fair use rules. No remuneration required. ©2021`)
+}
+else if ((msg.text === (`/capitals`)) ){
+    bot.sendMessage(msg.chat.id, capitals, {
+        parse_mode : 'HTML',
+    });   
+}
+else if ((msg.text === (`/countries`)) ){
+    bot.sendMessage(msg.chat.id, countries, {
+        parse_mode : 'HTML',
+    });   
+}
+else {
+    bot.sendMessage(msg.chat.id, `Unfortunately, I did not find any match. You can use /capitals or /countries to see all info;)`) 
+}
+
     })
 };
 
 findCountry();
-
