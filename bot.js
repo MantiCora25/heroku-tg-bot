@@ -1,5 +1,8 @@
 //бота можно найти в Telegram: @infocountry_bot
 
+require('dotenv').config()
+
+
 const TelegramBot = require('node-telegram-bot-api');
 const countries = require('./countries.js');
 const capitals = require('./capitals.js');
@@ -16,44 +19,6 @@ const bot = new TelegramBot(TOKEN, {                        // создание 
         }
     }
 });
-
-
-
-/*________________________________________________________________________________________________*/
-
-
-/*
-bot.onText(/\/start/, msg => {                              // бот здоровается с пользователем при команде /start
-    const {id} = msg.chat;
-    bot.sendMessage(id, `Nice to see you. Type country or capital city;)`);   
-});
-
-bot.onText(/\/help/, msg => {                              // бот отправляет информацию /help
-    const {id} = msg.chat;
-    bot.sendMessage(id, `This bot can send you some info about any country(capital, population, area, currency, etc.). Bot can find country by its name or capital city. You can start now;)`);   
-});
-bot.onText(/\/report/, msg => {                              // бот отправляет контактную информацию /report
-    const {id} = msg.chat;
-    bot.sendMessage(id, `You can contact developer by email: lliahovich2014@gmail.com IMPORTANT!!! If you are contacting about bugs or mistakes, please write "InfoCountryBot - BUG" in a letter subject. If you are contacting about any other case, please write "InfoCountryBot - OTHER" in a letter subject. Thank you in advance.`);   
-});
-bot.onText(/\/copyright/, msg => {                              // бот отправляет копирайт /copyright
-    const {id} = msg.chat;
-    bot.sendMessage(id, `InfoCountryBot is an uncommercial product. All the information was taken from the open sources on fair use rules. No remuneration required. ©2021`);   
-});
-bot.onText(/\/countries/, msg => {                              // бот отправляет копирайт /copyright
-    const {id} = msg.chat;
-    bot.sendMessage(id, countries, {
-        parse_mode : 'HTML',
-    });   
-});
-bot.onText(/\/capitals/, msg => {                              // бот отправляет копирайт /copyright
-    const {id} = msg.chat;
-    bot.sendMessage(id, capitals, {
-        parse_mode : 'HTML',
-    });   
-});*/
-
-
 
 /*________________________________________________________________________________________________*/
 
